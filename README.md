@@ -1,4 +1,4 @@
-# test-vuex-module
+# Nuxt Playground
 
 ## Build Setup
 
