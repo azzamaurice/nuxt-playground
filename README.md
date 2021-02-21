@@ -1,5 +1,9 @@
 # Nuxt Playground
 
+## Status
+
+[Published on Netlify](https://nuxt-playground-aaron.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/82e606f8-6d11-44d2-8fd5-f9fddbf5f392/deploy-status)](https://app.netlify.com/sites/nuxt-playground-aaron/deploys)
+
 ## Build Setup
 
 ```bash
