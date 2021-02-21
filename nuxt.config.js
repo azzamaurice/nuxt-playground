@@ -1,3 +1,5 @@
+import Sass from 'sass'
+
 export default {
     ssr: false,
     target: `static`,
@@ -15,9 +17,21 @@ export default {
             { rel: `icon`, type: `image/x-icon`, href: `/favicon.ico` }
         ]
     },
+    css: [
+        `normalize.css`,
+        `~/assets/styles/style.scss`
+    ],
     components: true,
     buildModules: [
         `@nuxtjs/eslint-module`,
         `@nuxtjs/stylelint-module`
-    ]
+    ],
+    build: {
+        loaders: {
+            scss: {
+                implementation: Sass,
+                sourceMap: false
+            }
+        }
+    }
 }

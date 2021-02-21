@@ -15,9 +15,7 @@ export default {
     props: {
         id: {
             type: String,
-            default() {
-                return [...Array(16)].map(_ => (~~(Math.random() * 36)).toString(36)).join(``)
-            }
+            required: true
         }
     },
     computed: {
@@ -48,6 +46,12 @@ export default {
 
 <style>
 label {
-    display: block;
+    width: 100%;
+    display: flex;
+}
+
+input {
+    flex: 1 1 100%;
+    width: 100%;
 }
 </style>

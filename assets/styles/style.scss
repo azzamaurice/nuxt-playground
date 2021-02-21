@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 16px;
+    background-color: #f3f3f3;
+    font-family: sans-serif;
+}
+
+button {
+    appearance: none;
+    padding: 3px 7px;
+    color: white;
+    background-color: #aaa;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+input {
+    appearance: none;
+    padding: 3px 7px;
+    color: #333;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    border: 1px solid #ddd;
+    outline: none;
+
+    &:focus {
+        border-color: royalblue;
+    }
+}
