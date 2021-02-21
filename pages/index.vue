@@ -11,7 +11,7 @@
         <div class="cards">
             <div v-for="card in cards" :key="card" class="card">
                 <div class="title">
-                    id: {{card}}
+                    id: {{ card }}
                 </div>
 
                 <div class="content">
