@@ -28,12 +28,12 @@ export default {
     },
     created() {
         if (!this.$store.hasModule(this.moduleId)) {
-            this.$store.registerModule(this.moduleId, cardModule)
+            return this.$store.registerModule(this.moduleId, cardModule)
         }
     },
     destroyed() {
         if (this.$store.hasModule(this.moduleId)) {
-            this.$store.unregisterModule(this.moduleId)
+            return this.$store.unregisterModule(this.moduleId)
         }
     },
     methods: {
