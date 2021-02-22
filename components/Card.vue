@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import cardModule from '~/assets/store/card'
 
 export default {
@@ -37,8 +38,14 @@ export default {
         }
     },
     methods: {
+        ...mapActions({ globalAction: `global/callAction` }),
         updateName({ target }) {
-            this.$store.dispatch(`${this.moduleId}/setName`, target.value)
+            this.globalAction({
+                id: this.moduleId,
+                path: `setName`,
+                payload: target.value
+            })
+            // this.$store.dispatch(`${this.moduleId}/setName`, target.value)
         }
     }
 }
