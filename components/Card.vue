@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import cardModule from '~/assets/store/card'
 
 export default {
@@ -19,11 +20,12 @@ export default {
         }
     },
     computed: {
+        ...mapGetters([`callGetter`]),
         moduleId() {
             return `cardModule-${this.id}`
         },
         name() {
-            return this.$store.getters[`${this.moduleId}/getName`]
+            return this.callGetter({ module: this.moduleId, getter: `getName` })
         }
     },
     created() {
@@ -37,8 +39,13 @@ export default {
         }
     },
     methods: {
+        ...mapActions([`callAction`]),
         updateName({ target }) {
-            this.$store.dispatch(`${this.moduleId}/setName`, target.value)
+            this.callAction({
+                module: this.moduleId,
+                method: `setName`,
+                payload: target.value
+            })
         }
     }
 }
